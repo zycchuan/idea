@@ -1,0 +1,15 @@
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    #自定这是注册中心服务器
+    registerWithEureka: false
+    fetchRegistry: false
+    #注册中心地址
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    #关闭保护机制
+  server:
+    enable-self-preservation: false
