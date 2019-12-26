@@ -1,0 +1,13 @@
+server:
+  port: 8751
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+spring:
+  application:
+    name: order-service
+
+feign:
+  hystrix:
+    enabled: true
