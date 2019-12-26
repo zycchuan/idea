@@ -1,0 +1,24 @@
+server:
+  port: 9001
+#\u670D\u52A1\u540D\u79F0
+spring:
+  application:
+    name: api-zuul
+
+#\u6CE8\u518C\u4E2D\u5FC3\u5730\u5740
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+#\u81EA\u5B9A\u4E49\u8DEF\u7531\u6620\u5C04
+#zuul:
+#  routes:
+#    api-order:
+#      path: /api-order/**
+#      serviceId: order-service
+zuul:
+  routes:
+    order-service: /api/order/**
+    product-service: /api/product/**
+  ignored-patterns: /*-service/**
