@@ -1,0 +1,19 @@
+server:
+  port: 9100
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/zycchuan/config-cloud.git
+          username: 670267593@qq.com
+          password: xiaoyeNN0730
+          timeout: 5
+          default-label: master
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
